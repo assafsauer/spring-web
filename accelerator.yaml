@@ -2,24 +2,25 @@ accelerator:
   displayName: new-accelerator
   description: ""
   iconUrl: https://raw.githubusercontent.com/simple-starters/icons/master/icon-tanzu-light.png
-  tags: []
+  tags:
+  - java
+  - spring
 
-  # options for the UI
   options:
   - name: deploymentType
     inputType: select
     choices:
-    - value: workload
-      text: TAP workload
-    - value: k8s-simple
-      text: Kubernetes deployment and service
     - value: none
       text: Skip Kubernetes deployment
+    - value: k8s-simple
+      text: Kubernetes deployment and service
     - value: knative
       text: Knative service
     defaultValue: knative
     required: true
     
-engine:
-  include:
-  - '**'
+ engine:
+  merge:
+    - include: [ "**" ]
+      exclude: [ "pom.xml", "settings.gradle", "readme.md", "kubernetes/**", "catalog/*.yaml" ]
+    - include: [ "pom.xml", "settings.gradle" ]
