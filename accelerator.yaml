@@ -3,11 +3,21 @@ accelerator:
   description: ""
   iconUrl: https://raw.githubusercontent.com/simple-starters/icons/master/icon-tanzu-light.png
   tags: []
+
+  # options for the UI
   options:
-  - name: optionName
-    label: Nice Label
-    display: true
-    defaultValue: ""
+  - name: deploymentType
+    inputType: select
+    choices:
+    - value: workload
+      text: TAP workload
+    - value: k8s-simple
+      text: Kubernetes deployment and service
+    - value: none
+      text: Skip Kubernetes deployment
+    defaultValue: workload
+    required: true
+    
 engine:
   include:
   - '**'
