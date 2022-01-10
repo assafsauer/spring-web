@@ -15,7 +15,9 @@ accelerator:
       text: Kubernetes deployment and service
     - value: none
       text: Skip Kubernetes deployment
-    defaultValue: k8s-simple
+    - value: knative
+      text: Knative service
+    defaultValue: knative
     required: true
     
 engine:
