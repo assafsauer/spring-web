@@ -15,7 +15,7 @@ accelerator:
       text: Kubernetes deployment and service
     - value: none
       text: Skip Kubernetes deployment
-    defaultValue: workload
+    defaultValue: k8s-simple
     required: true
     
 engine:
